@@ -1,2 +1,2 @@
 # JavaScript
-Todo sobre JavaScript
+Todo sobre JavaScript (Mis notas)
