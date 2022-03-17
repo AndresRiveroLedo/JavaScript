@@ -1,4 +1,4 @@
-# Curso Básico de JavaScript
+# Todo de JavaScript (Mis notas)
 
 ## 📹 Video 1 - ¿Que es JavaScript?
  
