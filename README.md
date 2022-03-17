@@ -1,4 +1,4 @@
-# Todo de JavaScript (Mis notas)
+JavaScript (Mis notas)
 
 ## 📹 Video 1 - ¿Que es JavaScript?
  
