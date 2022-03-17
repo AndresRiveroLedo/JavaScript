@@ -102,7 +102,7 @@ Una variable es una representación de algún lugar en memoria que nosotros vamo
     1. Declarar una variable -> var edad;
     2. Inicializar una variable -> edad = 30;
 
-Declarando e inicializando una variable --> var elementos = ["animal", "casa"];
+🗒️ Declarando e inicializando una variable --> var elementos = ["animal", "casa"];
 
 + Variable Objeto
     + var persona = {
