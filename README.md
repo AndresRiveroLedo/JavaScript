@@ -1,6 +1,6 @@
-JavaScript (Mis notas)
+# JavaScript (Mis notas)
 
-## 📹 Video 1 - ¿Que es JavaScript?
+# 📹 Video 1 - ¿Que es JavaScript?
  
  JavaScript nace de la necesidad de generar **dinamismo en las páginas web** y que a su vez personas y empresas pudieran interactuar. Es un lenguaje interpretado, orientado a objeto, debilmente tipado y dinámico.
     
@@ -45,7 +45,7 @@ JavaScript (Mis notas)
     + Apps Escritorio.
     + Internet of things
 
-## 📹 Video 2 - ¿Por qué JavaScript?
+# 📹 Video 2 - ¿Por qué JavaScript?
 
 + Comunidad enorme.
 + Desarrollo de Apps --> React Native
@@ -55,7 +55,7 @@ JavaScript (Mis notas)
         + Windows
 + Backend/IO
 
-## 📹 Video 3 - Elementos de un lenguaje de programación: Variables, funciones y sintexis
+# 📹 Video 3 - Elementos de un lenguaje de programación: Variables, funciones y sintexis
 
 + **Dos componentes principales**
     + Data que guardamos en memoria
@@ -90,7 +90,7 @@ JavaScript (Mis notas)
     + **undefinided** --> Existe cuando no se le asigna un valor a una variable.
     + **null** --> es cuando un dato no existe.
 
-## 📹 Video 4 - Variables en JavaScript
+# 📹 Video 4 - Variables en JavaScript
 
 **¿Qué es una variable?**
 
@@ -112,7 +112,7 @@ Una variable es una representación de algún lugar en memoria que nosotros vamo
 
     + llamar a la variable: persona;
      
-## 📹 Video 5 - Funciones en JavaScript.
+# 📹 Video 5 - Funciones en JavaScript.
 
 + Funciones
     + Las funciones son conjunto de sentencias que podemos utilizar para generar ciertos acciones con los valores ya guardados en las variables.  
@@ -136,7 +136,7 @@ Una variable es una representación de algún lugar en memoria que nosotros vamo
     + Lo que quiere decir con las funciones declarativas, podemos llamar a la función antes de que esta sea declarada y con la expresión de función, no. Tendríamos que declararla primero y después mandarla a llamar. 
 
 ***
-## 📹 Video 7 - Scope.
+# 📹 Video 7 - Scope.
 
 + **El scope hace referencia al alcance que tienen las variables dentro del código.**
     + Depende mucho de donde declararemos esas variables.
@@ -170,7 +170,7 @@ console.log(apellido); //apellido is not defined.
 ~~~
 
 ***
-## Video 8 - Hoisting
+# Video 8 - Hoisting
 
 🗒️ El hoisting es un proceso del compilador de javascript que consiste en que la declaración de las variables y las funciones son llevadas al inicio del código, sin importar su posición para su procesamiento, sin embargo, la inicialización de las variables no es llevada al inicio del código para su compilación, sino solo su declaración, lo cual suele dar a errores cuando se declara una variable sin inicializarla y se procesa en el código antes de haber llegado a su inicialización, lo cual nos suele dar una variable con valor undefined, ya que la variable, si fue almacenada en memoria, pero no se le asignó un valor hasta después de su ejecución. 
 
@@ -190,7 +190,7 @@ Es por eso que se tiene como buena práctica declarar e inicializar tanto la var
 El hoisting solo sucede con las palabras claves ***var*** y ***funtion***, por lo tanto, esto nos dice que solo se da en las versiones ECMAScript 5 o inferiores.
 En la versión 6 y superiores se permite la declaración de variables con let y const que son dos nuevas variables que no activan hoisting.
 
-## 📹 Video 9 - Coerción
+# 📹 Video 9 - Coerción
 
 + Coericón es la forma en la que podemos cambiar un tipo de valor a otro. Existen dos tipos de coerción:
     + **Coerción implícita:** Es cuando el lenguaje nos ayuda a cambiar el tipo de valor. 
@@ -215,9 +215,50 @@ En la versión 6 y superiores se permite la declaración de variables con let y 
             + Number("123hui"); --> NAN
 
 ***
-## 📹 Video 10 - Valores: truthy y falsy.
+# 📹 Video 10 - Valores: truthy y falsy.
 
-- ¿Qué tipos d
+### ¿Qué tipos de valores por default son verdaderos o falsos?
+
+Usamos la función de JS que es Boolean() y dentro del paréntesis ponemos el valor y nos dice si es false o true.
+
++ falsy:
+    + Boolean() --> sin ningún valor es false.
+    + Boolean(0) --> es false.
+    + Boolean(null) --> es false.
+    + Boolean(NaN) --> es false. NaN --> Not a Number
+    + Boolean(false) --> false.
+    + Boolean("") --> sin espacios es false.
+
++ Truthy:
+    + Boolean(1) --> True. Cualquier numero que no sea iguala cero es true.
+    + Boolean("a") --> true
+    + Boolean(" ") --> true si es con espacio.
+    + Boolean([]) --> true.
+    + Boolean({}) --> true. 
+    + Boolean(function() {}) --> true
+    + Boolean(true)--> true.
+
+# 📹 Video 11 - Operadores: Asignación, Comparación y Aritméticos.
+
++ Operador Binario:
+    + Suma: 3+2
+    + Resta: 5-2
+    + Multiplicacion: 3*2
+    + División: 20/2
+
++ Concatenación:
+    + "Diego" +  "De Granda"
+
++ Operadores de Asignación.
+    + var a = 1; --> Asignamos un valor a la variable. 
+
++ Operadores para comparar: 
+    + 3 == "3" --> true
+    + 3 === "3" --> false
+    + 5 < 3 --> false
+    + 5 > 3 --> true
+    + 5 >= 3 --> true
+    + 5 <= 3 -->  false
 
 
 
