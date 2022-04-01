@@ -250,17 +250,133 @@ Usamos la función de JS que es Boolean() y dentro del paréntesis ponemos el va
     + "Diego" +  "De Granda"
 
 + Operadores de Asignación.
-    + var a = 1; --> Asignamos un valor a la variable. 
+    + Asignación: var a = 1; --> Asignamos un valor a la variable. 
+    + Asignación de adición:	        x += y      x = x + y
+    + Asignación de resta:	            x -= y      x = x - y
+    + Asignación de multiplicación:	    x *= y	    x = x * y
+    + Asignación de división:	        x /= y	    x = x / y
+    + Asignación de residuo:	        x %= y	    x = x % y
+    + signación de exponenciación	    x **= y	    x = x ** y
+    + Asignación de desplazamiento a la izquierda	               x <<= y	     x = x << y
+    + Asignación de desplazamiento a la derecha	                   x >>= y	     x = x >> y
+    + Asignación de desplazamiento a la derecha sin signo:	       x >>>= y	     x = x >>> y
+    + Asignación AND bit a bit	        x &= y	    x = x & y
+    + Asignación XOR bit a bit	        x ^= y	    x = x ^ y
+    + Asignación OR bit a bit	        x |= y	    x = x | y
+    + Asignación AND lógico	            x &&= y	    x && (x = y)
+    + Asignación OR lógico	            x ||= y	    x || (x = y)
+    + Asignación de anulación lógica	x ??= y	    x ?? (x = y)
+   
+
 
 + Operadores para comparar: 
-    + 3 == "3" --> true
-    + 3 === "3" --> false
-    + 5 < 3 --> false
-    + 5 > 3 --> true
-    + 5 >= 3 --> true
-    + 5 <= 3 -->  false
+    + Igual (==) Devuelve true si los operandos son iguales: 3 == "3" --> true
+    + Estrictamente igual (===)	Devuelve true si los operandos son iguales y del mismo tipo. Consulta también Object.is y similitud en JS: 3 === "3" --> false
+    + Menor que (<)	Devuelve true si el operando izquierdo es menor que el operando derecho: 5 < 3 --> false
+    + Mayor que (>)	Devuelve true si el operando izquierdo es mayor que el operando derecho: 5 > 3 --> true
+    + Mayor o igual que (>=) Devuelve true si el operando izquierdo es mayor o igual que el operando derecho: 5 >= 3 --> true
+    + Menor o igual (<=) Devuelve true si el operando izquierdo es menor o igual que el operando derecho: 5 <= 3 -->  false
+    + No es igual (!=)	Devuelve true si los operandos no son iguales. 1 != 4 --> true.
+    + Desigualdad estricta (!==)	Devuelve true si los operandos son del mismo tipo pero no iguales, o son de diferente tipo: 3 !== '3'
 
++ Operadores unarios:
+    
+Una operación unaria es una operación con un solo operando.
++ 
+    + !false --> negacion de la negacion = true
+    + delete
+    + typeof
+    + void 
 
++ Operadores Aritméticos
+    + Residuo (%)	Operador binario. Devuelve el resto entero de dividir los dos operandos.	
+        + 12 % 5 devuelve 2.
+    + Incremento (++)	Operador unario. Agrega uno a su operando. Si se usa como operador prefijo (++x), devuelve el valor de su operando después de agregar uno; si se usa como operador sufijo (x++), devuelve el valor de su operando antes de agregar uno.	
+        + Si x es 3, ++x establece x en 4 y devuelve 4, mientras que x++ devuelve 3 y , solo entonces, establece x en 4.
+    + Decremento (--)	Operador unario. Resta uno de su operando. El valor de retorno es análogo al del operador de incremento.	
+        + Si x es 3, entonces --x establece x en 2 y devuelve 2, mientras que x-- devuelve 3 y, solo entonces, establece x en 2.
+    + Negación unaria (-)	Operador unario. Devuelve la negación de su operando.	Si x es 3, entonces -x devuelve -3.
+    + Positivo unario (+)	Operador unario. Intenta convertir el operando en un número, si aún no lo es.	
+        + +"3" devuelve 3.
+    +true devuelve 1.
+    + Operador de exponenciación (**)	Calcula la base a la potencia de exponente, es decir, baseexponente.	
+        + 2 ** 3 returns 8.
+        + 10 ** -1 returns 0.1.
 
++ Operadores lógicos
+    + AND Lógico (&&)	
+        + expr1 && expr2	
+        + Devuelve expr1 si se puede convertir a false; de lo contrario, devuelve expr2. Por lo tanto, cuando se usa con valores booleanos, && devuelve true si ambos operandos son true; de lo contrario, devuelve false.
+    + OR lógico (||)	
+        + expr1 || expr2	
+        + Devuelve expr1 si se puede convertir a true; de lo contrario, devuelve expr2. Por lo tanto, cuando se usa con valores booleanos, || devuelve true si alguno de los operandos es true; si ambos son falsos, devuelve false.
+    + NOT lógico (!)	
+        + !expr	
+        + Devuelve false si su único operando se puede convertir a true; de lo contrario, devuelve true.
 
-                
++ Operadores de cadena
+    + Además de los operadores de comparación, que se pueden usar en valores de cadena, el operador de concatenación (+) concatena dos valores de cadena, devolviendo otra cadena que es la unión de los dos operandos de cadena.
+    + Por ejemplo:
+
+```
+    console.log('mi ' + 'cadena'); // la consola registra la cadena "mi cadena".
+```
+    + El operador de asignación abreviada += también se puede utilizar para concatenar cadenas. Por ejemplo:
+
+```
+    var mystring = 'alpha';
+    mystring += 'bet'; // se evalúa como "alphabet" y asigna este valor a mystring.
+```
++ Operador condicional (ternario)
+
+El operador condicional es el único operador de JavaScript que toma tres operandos. El operador puede tener uno de dos valores según una condición. La sintaxis es:
+
+```
+    condition ? val1 : val2
+```
+
+Si condition es true, el operador tiene el valor de val1. De lo contrario, tiene el valor de val2. Puedes utilizar el operador condicional en cualquier lugar donde normalmente utilizas un operador estándar.
+
+Por ejemplo,
+```
+    var status = (age >= 18) ? 'adult' : 'minor';
+```
+
++ Operador coma
+
+El operador coma (,) simplemente evalúa ambos operandos y devuelve el valor del último operando. Este operador se utiliza principalmente dentro de un bucle for, para permitir que se actualicen múltiples variables cada vez a través del bucle. Se considera de mal estilo usarlo en otros lugares, cuando no es necesario. A menudo, en su lugar pueden y se deben utilizar dos declaraciones independientes.
+
+Por ejemplo, si a es un arreglo bidimensional con 10 elementos en un lado, el siguiente código usa el operador coma para actualizar dos variables a la vez. El código imprime los valores de los elementos diagonales en el arreglo:
+```
+    var x = [0,1,2,3,4,5,6,7,8,9]
+    var a = [x, x, x, x, x];
+
+    for (var i = 0, j = 9; i <= j; i++, j--)
+    //                                ^
+    console.log('a[' + i + '][' + j + ']= ' + a[i][j]);    
+```
+
+## Precedencia de los operadores
+
+La precedencia de los operadores determina el orden en que se aplican al evaluar una expresión. Puedes redefinir la precedencia de los operadores mediante el uso de paréntesis.
+
+La siguiente tabla describe la precedencia de los operadores, de mayor a menor.
+
++ Precedencia de los operadores
+    + Tipo de operador	Operadores individuales
+    + miembro	. []
+    + llamar / crear instancia	() new
+    + negación / incremento	! ~ - + ++ -- typeof void delete
+    + multiplicar / dividir	* / %
+    + adición / sustracción	+ -
+    + desplazamiento bit a bit	<< >> >>>
+    + relacional	< <= > >= in instanceof
+    + igualdad	== != === !==
+    + AND bit a bit	&
+    + XOR bit a bit	^
+    + OR bit a bit	|
+    + AND lógico	&&
+    + OR lógico	||
+    + condicional	?:
+    + asignación	= += -= *= /= %= <<= >>= >>>= &= ^= |= &&= ||= ??=
+    + coma	,
