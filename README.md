@@ -380,3 +380,94 @@ La siguiente tabla describe la precedencia de los operadores, de mayor a menor.
     + condicional	?:
     + asignación	= += -= *= /= %= <<= >>= >>>= &= ^= |= &&= ||= ??=
     + coma	,
+
+# Resumen - JavaScript
+
++ HTML (Hypertext Markup Langauge - lenguaje de marca de hipertexto): El lenguaje que define el contenido de las páginas web. 
++ CSS (Cascade Style Sheet - Hojas de estilo en Cascada): lenguaje en cual se especifica el diseño de la página web.
++ JavaScript -> Lenguaje para programar el comportamiento de las páginas web.
+
+## Node.js
+
+Node.js es una plataforma de desarrollo basada en JavaScript que nació hace unos 10 años, siendo una de las plataformas más importante de la actualidad. 
+Su principal característica es su versatilidad, se puede utilizar para desarrollar aplicaciones web, aplicaciones de servidor, aplicaciones de red, etc.
+Está basado en el motor JavaScript v8 de google, cuya tarea es compilar y ejecutar cñodigo de JavaScript. Dicho motor es el que se utiliza en Google Chrome. 
+
+### npm
+
+La plataforma de desarrollo Node.js trae consigo un gestor de paquetes que te permitirá instalar paquetes para el sistema operativo. Las siglas provienen de "Node Package Manager" - "Gestor de paquetes de Node".
+Mediante npm vas a ser capaz de instalar paquetes con una sola línea de comandos.
+    
+Instalación de Node.js --> se descarga de su sitio web la versión LTS y se instala como cualquier aplicación en windows. 
+
+## Entorno de Desarrollo
+
++ Un entorno de desarrollo es un programa informático que contiene integradas todas las herramientas, utilidades y funcionalidades necesarias para facilitar la tarea de desarrollo de software.  
+    + IDE --> Integrated Development Environment o Entorno de desarrollo de trabajo.
+    + Tareas --> 
+        + Editor de texto: componente con el que escribimos el código fuente.
+        + Compilador:  componente que traducirá el código fuente a máquina. 
+        + Depurador: componente que permitirá la realización de pruebas de código fuente y eleminicación de errores.
+        + Editor gráfico: componente que facilitará la creación y diseño de interfaces gráficas.
+
+## Mi primer JavaScript
+
+```
+    console.log("Hola Mundo");
+    console.log("Bienvenidos a mi primer JavaScript");
+```
+
+1. Paso: ejecutamos el programa que acabamos de escribir. Dos opciones:
+    + 1. Utilizar el terminal integrado en Visual Code Studio.
+            + VSC --> ventana "Terminal":
+                + Nos vamos a la carpeta de archivo: node miPrimerJavaScript.js
+    + 2. Ejecutarlo utilizando las funcionalidades que ofrece Visual Studio Code.
+        + VSC --> Ventana "Run" o "Ejecutar":
+            + Seleccionamos "Run without debugging" o "Ejecutar sin depurar".
+                + En la siguiente ventana, seleccionamos Node.js
+
+## Variables y Constante
+
++ Variables: son datos que se necesita almacenar y utilizar en los programas y que residen en la memoria del ordenador. Tienen la siguiente características:
+    + `Nombre`: identificador dentro del código fuente que utilizamos para usarla. 
+    + `Valor`: valor que almacena la variable. 
+
++ En JavaScript, los nombres de las variables empiezan siempre por una letra (mayúsculas o minúsculas) y pueden contener tantas letras (mayúsculas o minúsculas) y números que necesites. A diferencia des con otros lenguajes, tienes que tener en cuenta que las letras que las mayúsculas y minúsculas son letras diferentes, una variable con el nombre de "edad" será diferente a otra llamada "Edad".
+    + La declaración de la variable en JavaScript se realiza utilizando la palabra `let o const`:
+        + let edad; --> declaramos una variable.
+        + let nombre, apellidos; --> aquí declaramos dos variables. 
+
++ Constantes: son como las variables pero con una gran diferencia, que es que la constante no puede cambiar de valor durente la ejecución del programa. 
+    + La declaración de variable de JavaScript se realiza utilizando la palabra `const` en vez de let. 
+    + A diferencia de las variables, las constantes siempre tienen que ser inicializadas con un valor. Ejemplos:
+        + const pi = 3.1316.
+        + const velocidadLuz = 300 000; 
+
+## Operador Asignación:
+
++ El operador de asginación "=" sirve para asginar un valor a una variable o constante. Ejemplo:
+    + edadUsuario = 36; --> Asignamos 36 a edadUsuario;
+    + nombreUsuario = "Alfredo"; --> asignamos "Alfredo" a nombreUsuario.
+
+## Mostrando información 
+
++ Para ello utilizamos la siguiente sentencia
+    + console.log("Texto a mostrar");
++ Ejemplo: 
+```
+    let texto = "Alfredo";
+    console.log("Mi nombre es ",  texto)
+```
++ %s: cuando en la cadena de texto queremos introducir el valor de una variable. Ejemplo:
+```
+    let texto = "35";
+    console.log("Mi edad es %s años", edad);
+```
+
+# 📒 v12 - Condicionales if, else, else if
+
+
+
+
+
+
