@@ -466,8 +466,155 @@ Instalación de Node.js --> se descarga de su sitio web la versión LTS y se ins
 
 # 📒 v12 - Condicionales if, else, else if
 
+## if, else y else if
+```
+    let edad = 18;
+
+    if (edad === 18) {
+        console.log("Podrás votar por primera vez");
+    }else if( edad > 18){
+        console.log("Podrás votar");
+    }else{
+        console.log("Eres menor de edad, ya no puedes votar");
+    }
+
+```
+
+## Operador ternario: condition ? true : false;
+
+```
+    let numero = 1;
+    let resultado = numero === 1 ? "El valor es 1" : "El valor no es uno";
+    console.log(resultado);
+```
+## ¿Para qué nos sirve el operador ternario?
+
+Para definir una condición, el resultado cuando se cumple y cuando no se cumple, en una sola línea. 
+
+# 📒 v13 - switch
+
+## ¿En qué caso conviene utilizar switch?
+
+Cuando tenemos múltiples casos a evaluar y evitar el uso múltiple de `if-else.` 
+
+```
+    let numero = 10;
+    switch(numero){
+        case 1:
+            console.log("Soy 1");
+            break;
+        case 10:
+            console.log("Soy 10");
+            break;
+        case 100:
+            console.log("Soy un 100");
+            break;
+        default:
+            console.log("No soy nada");
+
+    }
+```
 
 
+# 📒 v14 - Arrays
 
+El objeto Array de JavaScript es un objeto global que es usado en la construcción de array, que son objetos de tipo lista de alto nivel. 
 
+## Descripción
 
++ Los array son objetos similares a una lista cuyo prototipo proporciona métodos para ejecutar operaciones de recorrido y de mutación.
++ Tanto en longitud como el tipo de elementos de una array son variables. 
+
+## Operaciones habituales
+
+### Crear un array
+
+```
+    let frutas ["Manzanas","Banana","Mango"];
+    console.log(frutas);
+```
+
+### Saber su xtensión
+
+```
+    frutas.length; //3
+```
+
+### Acceder a un elemento
+
+```
+    let primerElemento = frutas[0]
+    console.log(primerElemento)
+
+```
+
+## Último elemento 
+
+```
+    let ultimo = frutas[frutas.length - 1];
+```
+
+## Eliminar el último elemento
+
+```
+    frutas.pop()
+```
+
+## Recorrer Array
+
+```
+    frutas.foreach(function(elemento, indice, array){
+        console.log(elemento, indice); //manzana 0 | Banana 1 | Mango 2
+    });                      
+```
+## Añadir un elemento al final de un array
+
+```
+    frutas.push("Naranja");
+```
+
+## Añadir un elemento al principio de un array 
+
+```
+    frutas.unshift("fresa");
+```
+
+## Eliminar el primer elemento de un Array
+
+```
+ frutas.shift();
+```
+
+## Encontrar el índice de un elemento del array
+
+```
+    frutas.indexOf("Banana"); //1
+```
+
+## Eliminar un único elemento mediante su posición o a partir de su posición 
+
+```
+    frutas.splice(pos, numElementos)
+```
++ pos: posicion en la que partimos.
++ numElementos: cantidad de elementos a borrar. 
+
+## Copiar un Array
+
+```
+    let copiarArray = frutas.slice();
+```
+
+## Acceso a elementos del Array
+
+```
+    console.log(frutas[0]);
+    console.log(frutas[frutas.lebgth-1]);
+```
+
++ los arrays pueden contener más array 
++ los elementos principales de una array son: índice y elemento.
+
+# 📒 v15 - Loops: for, for ...of, for ...in
+
+## for 
