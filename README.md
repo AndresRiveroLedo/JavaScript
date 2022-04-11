@@ -618,3 +618,328 @@ El objeto Array de JavaScript es un objeto global que es usado en la construcci�
 # 📒 v15 - Loops: for, for ...of, for ...in
 
 ## for 
+
+Crea un bucle que consiste en tres expresiones opcionales, encerradas en paréntesis y separadas por puntos y coma, seguidas de una sentencia ejecutada en un bucle.
++ Sintaxis: 
+```
+    for([expresión-inicial]; [condición]; [expresión-final]){
+        sentencia --> la sentencia se ejecuta si la condición es verdadera. 
+    }
+```
+
+## for ...of
+
+La sentencia `for ...of` ejecuta un bloque de código para cada elemento de un `objeto iterable` como son los String, Array, objetos similares al array (arguments o Nodelist), TypeScript, Map, Set e iterables definidos por el usuario.
+
++ Sintaxis:
+```
+    for(variable of iterable){
+        statement(sentencia);
+    }
+```
++ Ejemplo:
+```
+    let iterable = "boo";
+    for(let value of itereble){
+        console.log(value); 
+    }
+
+```
+
+## for ...in
+
+La instrucción `for ...in` itera sobre todas las propiedades enumarables de un objeto que está codificado por cadenas (ignorando los codificados por símbolos,. incluídos las propiedades enumarables heredadas)
+
++ Sintaxis:
+    + variable: asigna un nombre de propiedad diferente a la variable en cada iteracion.
+    + objeto: propieades enumerables que son símbolos que se iteran. 
+```
+    for(variable in objeto){
+        instruccion;
+    }
+```
+
+### Descripción:
+
+un bucle `for ...in` solo itera sobre propiedades enumerables que no son símbolos. El bucle opera o itera sobre todas las propieades enumerables del objeto en sí y aquellas que el objeto hereda de su cadena de prototipos (las propiedades de los prototipos más cercano tiene prioridad sobre las propiedades de los prototipos más alejados del objeto en su cadena de prototipos).
+
++ Nota: `for ...in` no se debe de usar para iterar array donde el orden de las cosas del índice es importante.
+
+### ¿Por qué usar for ...in?
+
+Dado que `for ...in` está construido para iterar propieades de objetos, no se recomienda su uso con arreglos y opciones como Array.protopype.foreach() y, además, existe `for ...of`.
+
+### ¿Cuál podría ser el uso de for ...in?
+
+ Es posible que se utilice en forma más práctica con fines de depuración, ya que es una forma fácil de comprobar las propiedades de un objeto(mediante la salida por consola). En los casos que se prefiere un par de clave-valor para trabajar con datos, puede haber casos en los que se desee comprobar si alguna de esas clases cumple un valor particular. 
+
++ Ejemplos: 
+
+El siguiente bucle `for ...in` itera sobre todas las propiedades enumerables que no son símbolos del objeto y registra una cadena de los nombres de propiedad y su valores. 
+```
+let obj = {a:1, b:2, c:3}
+for(const prop in obj){
+    console.log(`obj.${prop} = ${prop}`);
+}
+
+```
++ Output: 
+    + obj.a = 1
+    + obj.b = 2
+    + obj.c = 3
+
++ Ejemplo con funciones: 
+
+```
+    let estudiantes = ["María", "José", "Sergio", "Andrés"];
+    
+    function saludarEstudiantes(estudiante){
+        console.log(`Hola, ${estudiante}`);
+    }
+
+    for(let i = 0; i < estudiante.length; i++){
+        saludarEstudiantes(estudiantes[i]);
+    }
+
+    for(let estudiante of estudiantes){
+        saludarEstudiantes(estudiante);
+    }
+```
+
+# 📒 v16 - Loops: While, do - While
+
+## While
+
+Crea un bucle que ejecuta una sentencia especificada mientras cierta condición se evalúa como verdadera. Dicha condición es evaluada antes de ejecutar la sentencia.
+
++ sintaxis:
+    + si la condición es verdadera se ejecuta la sentencia.
+
+```
+    while(condicion){
+        sentencia;
+    }
+```
+
+## Do - While
+
+La sentencia `do - while` crea un bucle que ejecuta una sentencia específica, hasta que la condición de comprobación se evalúa como falsa. La condición se evalúa después de ejecutar la sentencia dando como resultado que la sentencia se ejecute al menos una vez. 
+
++ sintaxis:
+    + la sentencia se ejecuta al menos una vez.
+    + se evalúa la condición después de cada bucle.
+
+```
+    do{
+    sentencia;
+    }while(condición)
+```
+
++ Ejemplo:
+
+```
+    let estudiantes = ["María", "Sergio", "Rosa", "Andres"];
+
+    function saludarEstudiantes( estudiante){
+        console.log(`Hola, ${Estudiante});
+    }
+
+    do{
+        let estudiante = estudiantes.shift(); // eliminamos el primer elemento del array.
+        saludarEstudiantes(estudiante);
+
+    }while(estudiantes.length > 0) //en cuanto eliminemos todos los elementos el bucle deja de iterar. 
+```
+
+# 📒 v17 - Objects
+
+La clase Object representa uno de los tipos de datos de JavaScript. Es usado para guardar una colección de datos definidos y entidades más complejas. 
+
+```
+    var miAuto = {
+    marca : "Toyota",
+    modelo: "Corolla",
+    anio: 2020,
+    //metodo de objeto
+    detalleDeAuto: function(){
+        console.log(`Auto ${this.modelo} ${this.anio}`);
+    }
+};
+
+    console.log(miAuto);
+    console.log(miAuto.anio)
+    console.log(miAuto.detalleDeAuto());
+```
+
+# 📒 v18 - Objects: Función Constructor
+
+El constructor Object crea una envoltura de objeto al valor dado. Si el valor es `null o undefined` creará o retornará un objeto vacío de otra forma. Retornará un objeto de un tipo que corresponda al valor dado. Si el valor ya es un objeto devolverá el valor.
+
++ sintaxis:
+```
+    new Object([value])
+```
+
+# 📒 v19 - Métodos de recorridos de Array
+
+## Filter()
+
+El método `filter()` nos permite filtrar solo los elementos que deseamos según ciertos criterios y devolvemos en un nuevo array. 
+
+## Map()
+
+El método `Map()` crea un nuevo array con los resultados de la llamada a la función indicada aplicada a cada uno de los sus elementos.
+
++ Ejemplo:
+```
+    let articulos = [
+        {nombre: "Bici", costo: 3000},
+        {nombre: "Tv", costo: 2500},
+        {nombre: "Libro", costo: 320},
+        {nombre: "Celular", costo: 10000},
+        {nombre: "Teclado", costo: 500},
+        {nombre: "Audifono", cost: 1700}
+    ];
+
+    //Metodo Filter
+    let articulosFiltrados = articulos.filter(
+        function(articulo){
+            return articulo.costo <= 500;
+        }
+
+    );
+
+    console.log(articulosFiltrados);
+
+    //Metodo Map
+    let nombreArticulos = articulos.map(
+        function(articulo){
+            return articulo.nombre;
+        }
+    );
+    console.log();
+    console.log(nombreArticulos);
+
+```
+
+# 📒 v20 - Recorriendo Arrays con .find(), .foreach() y .some()
+
+## find()
+
+El método `find()` devuelve el primer elemento del array que cumpla con la condición dada. 
+
+```
+let articulos = [
+    {nombre: "Bici", costo: 3000},
+    {nombre: "Tv", costo: 2500},
+    {nombre: "Libro", costo: 320},
+    {nombre: "Celular", costo: 10000},
+    {nombre: "Teclado", costo: 500},
+    {nombre: "Audifono", cost: 1700}
+];
+
+//Metodo .find()
+let encuentraArticulo = articulos.find(
+    function(articulo){
+        return articulo.nombre === "Tv";
+    }
+);
+console.log(encuentraArticulo);
+
+```
+## foreach()
+
+El método `foreach()` ejecuta lo que le definimos una vez por cada elemento de nuestro array.
+
+```
+    let articulos = [
+        {nombre: "Bici", costo: 3000},
+        {nombre: "Tv", costo: 2500},
+        {nombre: "Libro", costo: 320},
+        {nombre: "Celular", costo: 10000},
+        {nombre: "Teclado", costo: 500},
+        {nombre: "Audifono", cost: 1700}
+    ];
+
+    //Metodo .forEach
+    articulos.forEach(
+    function(articulo){
+        console.log(articulo.nombre);
+    }
+);
+
+```
+## some()
+
+El método `some()`comprueba si al menos un elemento del array cumple con la condición que le damos. 
+```
+    let articulos = [
+        {nombre: "Bici", costo: 3000},
+        {nombre: "Tv", costo: 2500},
+        {nombre: "Libro", costo: 320},
+        {nombre: "Celular", costo: 10000},
+        {nombre: "Teclado", costo: 500},
+        {nombre: "Audifono", cost: 1700}
+    ];
+
+    //Metodo .Some(): solo nos devuelve true o false
+    var articulosBaratos = articulos.some(
+        function(articulo){
+            return articulo.costo <= 700;
+        }
+    );
+
+    console.log(articulosBaratos);
+```
+
+# 📒 v21 - Eliminado un elemento de un Array 
+
+## Médodo .push()
+
+El método `push()`  nos permite agregar uno más elements al final de un array. 
+
+ + Ejemplo con número: 
+```
+    let numArray = [1,2,3,4,5];
+
+    function newNum(){
+        numArray.push()
+    }
+
+    console.log(numArray);
+```
++ Ejemplo con cadena:
+```
+    let textArray = ["Ana", "María"];
+    
+    function addChar(){
+        textArray.push("Sergio");
+    }
+    
+    console.log(textArray);
+```
+
+## Médodo shift()
+
+El método shift() nos permite eliminar un elemento del array que esté en el índice 0.
++ Ejemplo:
+```
+    let array = [1,2,3,4,5];
+    console.log(array);
+
+    let shiftArray = array.shift();
+    console.log(array);
+```
+
+## Médodo pop()
+
+El método `.pop()` elimina el última elemento de a un array.
++ Ejemplo:
+```
+    let array = [1,2,3,4, 5]
+    console.log(array);
+
+    let popArray = array.pop();
+
+    console.log(popArray); 
+```
