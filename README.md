@@ -6,7 +6,7 @@
     
 + **Debilmente tipado:** se refiere a que JavaScript ejecutará operaciones entre distintos tipos de datos. Ejemplo: sumar un número con un carácter. Otros lenguajes dan errores al intentar esto.
 
-+ **Dinámico:** JavaScript no necesita ser compilado, lo que facilita probar nuestro código. También hace que los errores se vean hasta que se ejecuta dicho código. También hace que los errores se vean hasta que se ejecuta(runtime) dicho código.
++ **Dinámico:** JavaScript no necesita ser compilado, lo que facilita probar nuestro código. También hace que los errores se vean hasta que se ejecuta (runtime) dicho código. 
 
 + **Suma en JavaScript:**
     + 4 + "7" = 47; //"7" es un String
@@ -99,32 +99,40 @@ Una variable es una representación de algún lugar en memoria que nosotros vamo
 // --> creamos comentarios en js. 
 
 + **Existen ds estados:**
-    1. Declarar una variable -> var edad;
+    1. Declarar una variable -> var/let/const edad;
     2. Inicializar una variable -> edad = 30;
 
-🗒️ Declarando e inicializando una variable --> var elementos = ["animal", "casa"];
+🗒️ Declarando e inicializando una variable --> var/let/const elementos = ["animal", "casa"];
 
 + Variable Objeto
+```
     + var persona = {
         nombre: "Andres",
         edad : 30
     }
+```
++ llamar a la variable: 
+```    
+    persona;
+```
 
-    + llamar a la variable: persona;
-     
 # 📹 Video 5 - Funciones en JavaScript.
 
 + Funciones
     + Las funciones son conjunto de sentencias que podemos utilizar para generar ciertos acciones con los valores ya guardados en las variables.  
         + Existen dos tipos de funciones:
             + **Declarativas:** Su sintexis es la siguiente:
+```
                 function miFuncion(){
                     return 3; 
-                }
+```
++   +  +   
             + **De expresion:** son aquellos que guardamos en una variable, por lo tanto, no es necesario nombrarlas y tienen la siguiente sintaxis:
+```
                 var miFuncion = function(){
                     return a+b;
                 }
+```
 
 + **Características de las funciones**
     + Puede llevar parámetros separados por coma.
@@ -146,33 +154,33 @@ Una variable es una representación de algún lugar en memoria que nosotros vamo
 + **PD:** En el **Scope Global** no podemos acceder a una variable que se encuentra en un **Scope Local**, pero estando en un **Scope Local** podemos acceder a una variable que se encuentra en el **Scope Global**.
 
 **Ejemplo 1:** *Scope Global:*
-~~~
- var nombre = "Diego";
+```
+    var nombre = "Diego";
 
- function fun(){
-        var apellido = "De Granda"
-        return nombre + " " + apellido; --> No nos daría ningun error. 
- }
+    function fun(){
+            var apellido = "De Granda"
+            return nombre + " " + apellido; --> No nos daría ningun error. 
+    }
 
-fun(); //Salida: Diego de Granda
-~~~
+    fun(); //Salida: Diego de Granda
+```
 
 **Ejemplo 2:** *Scope Local:*
 ~~~
-var nombre = "Diego";
+    var nombre = "Diego";
 
- function fun(){
-        var apellido = "De Granda"
-        return nombre + " " + apellido; --> No nos daría ningun error. 
- }
+    function fun(){
+            var apellido = "De Granda"
+            return nombre + " " + apellido; --> No nos daría ningun error. 
+    }
 
-console.log(apellido); //apellido is not defined.
+    console.log(apellido); //apellido is not defined.
 ~~~
 
 ***
 # Video 8 - Hoisting
 
-🗒️ El hoisting es un proceso del compilador de javascript que consiste en que la declaración de las variables y las funciones son llevadas al inicio del código, sin importar su posición para su procesamiento, sin embargo, la inicialización de las variables no es llevada al inicio del código para su compilación, sino solo su declaración, lo cual suele dar a errores cuando se declara una variable sin inicializarla y se procesa en el código antes de haber llegado a su inicialización, lo cual nos suele dar una variable con valor undefined, ya que la variable, si fue almacenada en memoria, pero no se le asignó un valor hasta después de su ejecución. 
+🗒️ El hoisting es un proceso del compilador de javascript que consiste en que la declaración de las variables y las funciones son llevadas al inicio del código, sin importar su posición para su procesamiento, sin embargo, la inicialización de las variables no es llevada al inicio del código para su compilación, sino solo su declaración, lo cual suele dar a errores cuando se declara una variable sin inicializarla y se procesa en el código antes de haber llegado a su inicialización, lo cual nos suele dar una variable con valor `undefined`, ya que la variable, si fue almacenada en memoria, pero no se le asignó un valor hasta después de su ejecución. 
 
 ~~~
     saludo();
@@ -186,9 +194,9 @@ console.log(apellido); //apellido is not defined.
 
 Output del código anterior --> Hola undefined.
 
-Es por eso que se tiene como buena práctica declarar e inicializar tanto la variable como funciones al inicio de nuestro programa, sin importat donde sean utilizadas, pues de esta manera se evita usarlas antes de ser inicializadas. 
+Es por eso que se tiene como buena práctica declarar e inicializar tanto la variable como funciones al inicio de nuestro programa, sin importar donde sean utilizadas, pues de esta manera se evita usarlas antes de ser inicializadas. 
 El hoisting solo sucede con las palabras claves ***var*** y ***funtion***, por lo tanto, esto nos dice que solo se da en las versiones ECMAScript 5 o inferiores.
-En la versión 6 y superiores se permite la declaración de variables con let y const que son dos nuevas variables que no activan hoisting.
+**En la versión 6 y superiores se permite la declaración de variables con let y const que son dos nuevas variables que no activan hoisting.**
 
 # 📹 Video 9 - Coerción
 
@@ -240,16 +248,19 @@ Usamos la función de JS que es Boolean() y dentro del paréntesis ponemos el va
 
 # 📹 Video 11 - Operadores: Asignación, Comparación y Aritméticos.
 
-+ Operador Binario:
+## Operador Binario:
++ 
     + Suma: 3+2
     + Resta: 5-2
     + Multiplicacion: 3*2
     + División: 20/2
 
-+ Concatenación:
+## Concatenación:
++ 
     + "Diego" +  "De Granda"
 
-+ Operadores de Asignación.
+## Operadores de Asignación.
++ 
     + Asignación: var a = 1; --> Asignamos un valor a la variable. 
     + Asignación de adición:	        x += y      x = x + y
     + Asignación de resta:	            x -= y      x = x - y
@@ -269,9 +280,10 @@ Usamos la función de JS que es Boolean() y dentro del paréntesis ponemos el va
    
 
 
-+ Operadores para comparar: 
+## Operadores para comparar:
++ 
     + Igual (==) Devuelve true si los operandos son iguales: 3 == "3" --> true
-    + Estrictamente igual (===)	Devuelve true si los operandos son iguales y del mismo tipo. Consulta también Object.is y similitud en JS: 3 === "3" --> false
+    + Estrictamente igual (===)	Devuelve true si los operandos son `iguales` y del mismo `tipo`. Consulta también Object.is y similitud en JS: 3 === "3" --> false
     + Menor que (<)	Devuelve true si el operando izquierdo es menor que el operando derecho: 5 < 3 --> false
     + Mayor que (>)	Devuelve true si el operando izquierdo es mayor que el operando derecho: 5 > 3 --> true
     + Mayor o igual que (>=) Devuelve true si el operando izquierdo es mayor o igual que el operando derecho: 5 >= 3 --> true
@@ -279,31 +291,33 @@ Usamos la función de JS que es Boolean() y dentro del paréntesis ponemos el va
     + No es igual (!=)	Devuelve true si los operandos no son iguales. 1 != 4 --> true.
     + Desigualdad estricta (!==)	Devuelve true si los operandos son del mismo tipo pero no iguales, o son de diferente tipo: 3 !== '3'
 
-+ Operadores unarios:
+## Operadores unarios:
     
 Una operación unaria es una operación con un solo operando.
 + 
-    + !false --> negacion de la negacion = true
-    + delete
-    + typeof
-    + void 
+    + `!false` --> negacion de la negacion = true
+    + `delete`
+    + `typeof`
+    + `void` 
 
-+ Operadores Aritméticos
-    + Residuo (%)	Operador binario. Devuelve el resto entero de dividir los dos operandos.	
+## Operadores Aritméticos
++ 
+    + `Residuo` (%)	Operador binario. Devuelve el resto entero de dividir los dos operandos.	
         + 12 % 5 devuelve 2.
-    + Incremento (++)	Operador unario. Agrega uno a su operando. Si se usa como operador prefijo (++x), devuelve el valor de su operando después de agregar uno; si se usa como operador sufijo (x++), devuelve el valor de su operando antes de agregar uno.	
+    + `Incremento` (++)	Operador unario. Agrega uno a su operando. Si se usa como operador prefijo (++x), devuelve el valor de su operando después de agregar uno; si se usa como operador sufijo (x++), devuelve el valor de su operando antes de agregar uno.	
         + Si x es 3, ++x establece x en 4 y devuelve 4, mientras que x++ devuelve 3 y , solo entonces, establece x en 4.
-    + Decremento (--)	Operador unario. Resta uno de su operando. El valor de retorno es análogo al del operador de incremento.	
+    + `Decremento` (--)	Operador unario. Resta uno de su operando. El valor de retorno es análogo al del operador de incremento.	
         + Si x es 3, entonces --x establece x en 2 y devuelve 2, mientras que x-- devuelve 3 y, solo entonces, establece x en 2.
-    + Negación unaria (-)	Operador unario. Devuelve la negación de su operando.	Si x es 3, entonces -x devuelve -3.
-    + Positivo unario (+)	Operador unario. Intenta convertir el operando en un número, si aún no lo es.	
+    + `Negación unaria` (-)	Operador unario. Devuelve la negación de su operando.	Si x es 3, entonces -x devuelve -3.
+    + `Positivo unario` (+)	Operador unario. Intenta convertir el operando en un número, si aún no lo es.	
         + +"3" devuelve 3.
-    +true devuelve 1.
-    + Operador de exponenciación (**)	Calcula la base a la potencia de exponente, es decir, baseexponente.	
+    + `true` devuelve 1.
+    + `Operador de exponenciación` (**)	Calcula la base a la potencia de exponente, es decir, baseexponente.	
         + 2 ** 3 returns 8.
         + 10 ** -1 returns 0.1.
 
-+ Operadores lógicos
+## Operadores lógicos
++ 
     + AND Lógico (&&)	
         + expr1 && expr2	
         + Devuelve expr1 si se puede convertir a false; de lo contrario, devuelve expr2. Por lo tanto, cuando se usa con valores booleanos, && devuelve true si ambos operandos son true; de lo contrario, devuelve false.
@@ -314,20 +328,22 @@ Una operación unaria es una operación con un solo operando.
         + !expr	
         + Devuelve false si su único operando se puede convertir a true; de lo contrario, devuelve true.
 
-+ Operadores de cadena
+## Operadores de cadena
++ 
     + Además de los operadores de comparación, que se pueden usar en valores de cadena, el operador de concatenación (+) concatena dos valores de cadena, devolviendo otra cadena que es la unión de los dos operandos de cadena.
     + Por ejemplo:
 
 ```
     console.log('mi ' + 'cadena'); // la consola registra la cadena "mi cadena".
 ```
++ 
     + El operador de asignación abreviada += también se puede utilizar para concatenar cadenas. Por ejemplo:
 
 ```
     var mystring = 'alpha';
     mystring += 'bet'; // se evalúa como "alphabet" y asigna este valor a mystring.
 ```
-+ Operador condicional (ternario)
+## Operador condicional (ternario)
 
 El operador condicional es el único operador de JavaScript que toma tres operandos. El operador puede tener uno de dos valores según una condición. La sintaxis es:
 
@@ -342,7 +358,7 @@ Por ejemplo,
     var status = (age >= 18) ? 'adult' : 'minor';
 ```
 
-+ Operador coma
+## Operador coma
 
 El operador coma (,) simplemente evalúa ambos operandos y devuelve el valor del último operando. Este operador se utiliza principalmente dentro de un bucle for, para permitir que se actualicen múltiples variables cada vez a través del bucle. Se considera de mal estilo usarlo en otros lugares, cuando no es necesario. A menudo, en su lugar pueden y se deben utilizar dos declaraciones independientes.
 
@@ -391,11 +407,11 @@ La siguiente tabla describe la precedencia de los operadores, de mayor a menor.
 
 Node.js es una plataforma de desarrollo basada en JavaScript que nació hace unos 10 años, siendo una de las plataformas más importante de la actualidad. 
 Su principal característica es su versatilidad, se puede utilizar para desarrollar aplicaciones web, aplicaciones de servidor, aplicaciones de red, etc.
-Está basado en el motor JavaScript v8 de google, cuya tarea es compilar y ejecutar cñodigo de JavaScript. Dicho motor es el que se utiliza en Google Chrome. 
+Está basado en el motor JavaScript v8 de google, cuya tarea es compilar y ejecutar código de JavaScript. Dicho motor es el que se utiliza en Google Chrome. 
 
 ### npm
 
-La plataforma de desarrollo Node.js trae consigo un gestor de paquetes que te permitirá instalar paquetes para el sistema operativo. Las siglas provienen de "Node Package Manager" - "Gestor de paquetes de Node".
+La plataforma de desarrollo `Node.js` trae consigo un gestor de paquetes que te permitirá instalar paquetes para el sistema operativo. Las siglas provienen de "Node Package Manager" - "Gestor de paquetes de Node".
 Mediante npm vas a ser capaz de instalar paquetes con una sola línea de comandos.
     
 Instalación de Node.js --> se descarga de su sitio web la versión LTS y se instala como cualquier aplicación en windows. 
@@ -432,7 +448,7 @@ Instalación de Node.js --> se descarga de su sitio web la versión LTS y se ins
     + `Nombre`: identificador dentro del código fuente que utilizamos para usarla. 
     + `Valor`: valor que almacena la variable. 
 
-+ En JavaScript, los nombres de las variables empiezan siempre por una letra (mayúsculas o minúsculas) y pueden contener tantas letras (mayúsculas o minúsculas) y números que necesites. A diferencia des con otros lenguajes, tienes que tener en cuenta que las letras que las mayúsculas y minúsculas son letras diferentes, una variable con el nombre de "edad" será diferente a otra llamada "Edad".
++ En JavaScript, los nombres de las variables empiezan siempre por una letra (mayúsculas o minúsculas) y pueden contener tantas letras (mayúsculas o minúsculas) y números que necesites. A diferencia con otros lenguajes, tienes que tener en cuenta que las letras que las mayúsculas y minúsculas son letras diferentes, una variable con el nombre de "edad" será diferente a otra llamada "Edad".
     + La declaración de la variable en JavaScript se realiza utilizando la palabra `let o const`:
         + let edad; --> declaramos una variable.
         + let nombre, apellidos; --> aquí declaramos dos variables. 
@@ -445,7 +461,7 @@ Instalación de Node.js --> se descarga de su sitio web la versión LTS y se ins
 
 ## Operador Asignación:
 
-+ El operador de asginación "=" sirve para asginar un valor a una variable o constante. Ejemplo:
++ El operador de asignación "=" sirve para asginar un valor a una variable o constante. Ejemplo:
     + edadUsuario = 36; --> Asignamos 36 a edadUsuario;
     + nombreUsuario = "Alfredo"; --> asignamos "Alfredo" a nombreUsuario.
 
@@ -534,7 +550,7 @@ El objeto Array de JavaScript es un objeto global que es usado en la construcci�
     console.log(frutas);
 ```
 
-### Saber su xtensión
+### Saber su extensión
 
 ```
     frutas.length; //3
@@ -609,7 +625,7 @@ El objeto Array de JavaScript es un objeto global que es usado en la construcci�
 
 ```
     console.log(frutas[0]);
-    console.log(frutas[frutas.lebgth-1]);
+    console.log(frutas[frutas.length-1]);
 ```
 
 + los arrays pueden contener más array 
@@ -892,11 +908,11 @@ El método `some()`comprueba si al menos un elemento del array cumple con la con
     console.log(articulosBaratos);
 ```
 
-# 📒 v21 - Eliminado un elemento de un Array 
+# 📒 v21 - Agregar o Eliminar un elemento de un Array 
 
 ## Médodo .push()
 
-El método `push()`  nos permite agregar uno más elements al final de un array. 
+El método `push()`  nos permite agregar uno más elementos al final de un array. 
 
  + Ejemplo con número: 
 ```
